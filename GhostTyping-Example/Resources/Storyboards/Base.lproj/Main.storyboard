@@ -115,6 +115,77 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
+        <!--Chaining-->
+        <scene sceneID="FAd-J4-4N7">
+            <objects>
+                <viewController id="og1-pI-KqE" customClass="ChainingAnimationsViewController" customModule="GhostTyping_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Ph-5i-i6g"/>
+                        <viewControllerLayoutGuide type="bottom" id="FlU-OJ-MCc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAK-eZ-qYS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First label that will be ghosted in" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWI-5X-0Vg">
+                                <rect key="frame" x="16" y="252" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the second label that will be ghosted in and should only be animated once all of the first label is shown" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-lz-oul">
+                                <rect key="frame" x="16" y="300" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-IN-1ic">
+                                <rect key="frame" x="16" y="347" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5I-zx-ptK">
+                                <rect key="frame" x="141" y="446" width="92" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="H38-5I-D6f"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="OKN-r4-Faf"/>
+                                    <constraint firstAttribute="width" constant="92" id="PhW-x8-7eY"/>
+                                    <constraint firstAttribute="height" constant="44" id="qVm-fg-a1D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Animate"/>
+                                <connections>
+                                    <action selector="animatorButtonPressed:" destination="og1-pI-KqE" eventType="touchUpInside" id="1lT-GR-kgW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qWI-5X-0Vg" firstAttribute="leading" secondItem="hAK-eZ-qYS" secondAttribute="leadingMargin" id="0Jm-gM-epc"/>
+                            <constraint firstItem="h3S-lz-oul" firstAttribute="top" secondItem="qWI-5X-0Vg" secondAttribute="bottom" constant="27" id="3IQ-x6-h6V"/>
+                            <constraint firstItem="vQF-IN-1ic" firstAttribute="top" secondItem="h3S-lz-oul" secondAttribute="bottom" constant="26" id="4KU-r5-3O1"/>
+                            <constraint firstItem="h3S-lz-oul" firstAttribute="trailing" secondItem="hAK-eZ-qYS" secondAttribute="trailingMargin" id="EIe-Vf-lwO"/>
+                            <constraint firstItem="qWI-5X-0Vg" firstAttribute="trailing" secondItem="hAK-eZ-qYS" secondAttribute="trailingMargin" id="K5U-Kn-MPd"/>
+                            <constraint firstItem="vQF-IN-1ic" firstAttribute="trailing" secondItem="hAK-eZ-qYS" secondAttribute="trailingMargin" id="KTV-cT-5eM"/>
+                            <constraint firstItem="F5I-zx-ptK" firstAttribute="top" secondItem="vQF-IN-1ic" secondAttribute="bottom" constant="78" id="ObJ-Xu-hL9"/>
+                            <constraint firstItem="h3S-lz-oul" firstAttribute="leading" secondItem="hAK-eZ-qYS" secondAttribute="leadingMargin" id="TlX-5y-VsS"/>
+                            <constraint firstItem="qWI-5X-0Vg" firstAttribute="top" secondItem="5Ph-5i-i6g" secondAttribute="bottom" constant="232" id="aL9-m7-GbF"/>
+                            <constraint firstItem="vQF-IN-1ic" firstAttribute="leading" secondItem="hAK-eZ-qYS" secondAttribute="leadingMargin" id="bLJ-PU-jhH"/>
+                            <constraint firstItem="F5I-zx-ptK" firstAttribute="centerX" secondItem="hAK-eZ-qYS" secondAttribute="centerX" id="yGM-Fz-8tz"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chaining" image="first" id="dNj-3G-cWC"/>
+                    <connections>
+                        <outlet property="firstTypingLabel" destination="qWI-5X-0Vg" id="kMY-Wy-N0Q"/>
+                        <outlet property="secondTypingLabel" destination="h3S-lz-oul" id="oYt-Ld-IOu"/>
+                        <outlet property="thirdTypingLabel" destination="vQF-IN-1ic" id="Eif-uN-Is4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agr-kC-rBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1064"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -128,6 +199,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="og1-pI-KqE" kind="relationship" relationship="viewControllers" id="HXq-Ui-MOo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
