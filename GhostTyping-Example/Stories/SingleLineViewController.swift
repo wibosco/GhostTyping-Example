@@ -8,12 +8,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SingleLineViewController: UIViewController {
 
     // MARK: - Properties
     
     @IBOutlet weak var typingLabel: UILabel!
-    @IBOutlet weak var animatorButton: UIButton!
     
     var animationTimer: Timer?
     var fullTextToBeWritten: String?
@@ -46,18 +45,16 @@ class FirstViewController: UIViewController {
         var nextCharacterIndexToBeShown = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (timer: Timer) in
-            if let fullTextToBeWritten = self?.fullTextToBeWritten {
+            if let fullTextToBeWritten = self?.fullTextToBeWritten, let label = self?.typingLabel {
                 let characters = Array(fullTextToBeWritten.characters)
                 
                 if nextCharacterIndexToBeShown < characters.count {
-                    if let label = self?.typingLabel {
-                        let nextCharacterToAdd = String(characters[nextCharacterIndexToBeShown])
-                        
-                        if let currentText = label.text {
-                            label.text = currentText + nextCharacterToAdd
-                        } else {
-                            label.text = nextCharacterToAdd
-                        }
+                    let nextCharacterToAdd = String(characters[nextCharacterIndexToBeShown])
+                    
+                    if let currentText = label.text {
+                        label.text = currentText + nextCharacterToAdd
+                    } else {
+                        label.text = nextCharacterToAdd
                     }
                     
                     nextCharacterIndexToBeShown += 1
