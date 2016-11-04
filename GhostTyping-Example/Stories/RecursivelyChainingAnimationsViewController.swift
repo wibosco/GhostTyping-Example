@@ -1,18 +1,20 @@
 //
-//  SecondViewController.swift
+//  RecursivelyChainingAnimationsViewController.swift
 //  GhostTyping-Example
 //
-//  Created by William Boles on 30/10/2016.
+//  Created by William Boles on 04/11/2016.
 //  Copyright © 2016 Boles. All rights reserved.
 //
 
 import UIKit
 
-class MutlipleLineViewController: UIViewController {
-    
+class RecursivelyChainingAnimationsViewController: UIViewController {
+
     // MARK: - Properties
     
-    @IBOutlet weak var typingLabel: UILabel!
+    @IBOutlet weak var firstTypingLabel: UILabel!
+    @IBOutlet weak var secondTypingLabel: UILabel!
+    @IBOutlet weak var thirdTypingLabel: UILabel!
     
     var animationTimer: Timer?
     
@@ -26,19 +28,40 @@ class MutlipleLineViewController: UIViewController {
     // MARK: - ButtonActions
     
     @IBAction func animatorButtonPressed(_ sender: Any) {
-        animateText()
+        startTextAnimation()
     }
     
     // MARK: - Animation
     
-    func animateText() {
+    func startTextAnimation() {
         animationTimer?.invalidate()
-        configureLabel(label: typingLabel, alpha: 0, until: typingLabel.text?.characters.count)
         
+        var typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel]
+        
+        for typingAnimationLabel in typingAnimationLabelQueue {
+            configureLabel(label: typingAnimationLabel!, alpha: 0, until: typingAnimationLabel!.text?.characters.count)
+        }
+        
+        func doAnimation() {
+            guard typingAnimationLabelQueue.count > 0 else {
+                return
+            }
+            
+            let typingAnimationLabel = typingAnimationLabelQueue.removeFirst()
+            
+            animateTyping(label: typingAnimationLabel) {
+                doAnimation()
+            }
+        }
+        
+        doAnimation()
+    }
+    
+    func animateTyping(label: UILabel?, completion: (()->Void)?) {
         var showCharactersUntilIndex = 1
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (timer: Timer) in
-            if let label = self?.typingLabel, let attributedText = label.attributedText {
+            if let label = label, let attributedText = label.attributedText {
                 let characters = Array(attributedText.string.characters)
                 
                 if showCharactersUntilIndex <= characters.count {
@@ -47,9 +70,17 @@ class MutlipleLineViewController: UIViewController {
                     showCharactersUntilIndex += 1
                 } else {
                     timer.invalidate()
+                    
+                    if let completion = completion {
+                        completion()
+                    }
                 }
             } else {
                 timer.invalidate()
+                
+                if let completion = completion {
+                    completion()
+                }
             }
         })
     }
@@ -62,4 +93,3 @@ class MutlipleLineViewController: UIViewController {
         }
     }
 }
-

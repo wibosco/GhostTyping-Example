@@ -14,6 +14,7 @@
 		911524E91DC6072500F82D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911524E51DC6072500F82D88 /* LaunchScreen.storyboard */; };
 		911524EA1DC6072500F82D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911524E71DC6072500F82D88 /* Main.storyboard */; };
 		913214381DC68BA1001C3C12 /* ChainingAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913214371DC68BA1001C3C12 /* ChainingAnimationsViewController.swift */; };
+		919890BE1DCD070600BB98CC /* RecursivelyChainingAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919890BD1DCD070600BB98CC /* RecursivelyChainingAnimationsViewController.swift */; };
 		91B144621DC6067F007DD2C1 /* GhostTyping_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B144611DC6067F007DD2C1 /* GhostTyping_ExampleTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		911524E61DC6072500F82D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		911524E81DC6072500F82D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		913214371DC68BA1001C3C12 /* ChainingAnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainingAnimationsViewController.swift; sourceTree = "<group>"; };
+		919890BD1DCD070600BB98CC /* RecursivelyChainingAnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursivelyChainingAnimationsViewController.swift; sourceTree = "<group>"; };
 		91B144471DC6067F007DD2C1 /* GhostTyping-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GhostTyping-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B1445D1DC6067F007DD2C1 /* GhostTyping-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GhostTyping-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B144611DC6067F007DD2C1 /* GhostTyping_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostTyping_ExampleTests.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				911524DB1DC606F700F82D88 /* SingleLineViewController.swift */,
 				911524DC1DC606F700F82D88 /* MultipleLineViewController.swift */,
 				913214371DC68BA1001C3C12 /* ChainingAnimationsViewController.swift */,
+				919890BD1DCD070600BB98CC /* RecursivelyChainingAnimationsViewController.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				911524E31DC606F700F82D88 /* MultipleLineViewController.swift in Sources */,
 				911524DD1DC606F700F82D88 /* AppDelegate.swift in Sources */,
 				911524E21DC606F700F82D88 /* SingleLineViewController.swift in Sources */,
+				919890BE1DCD070600BB98CC /* RecursivelyChainingAnimationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,7 @@ class SingleLineViewController: UIViewController {
         animateText()
     }
     
-    // MARK: Animation
+    // MARK: - Animation
     
     func animateText() {
         animationTimer?.invalidate()

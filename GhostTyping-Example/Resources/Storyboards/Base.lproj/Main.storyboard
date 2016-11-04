@@ -22,14 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's see the ghost write this!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mig-v5-qJg">
-                                <rect key="frame" x="16" y="323" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7if-wC-2HN">
-                                <rect key="frame" x="141" y="422" width="92" height="44"/>
+                                <rect key="frame" x="141.5" y="544" width="92" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="92" id="1t2-uW-eWC"/>
                                     <constraint firstAttribute="height" constant="44" id="QYN-9r-wVZ"/>
@@ -40,14 +34,20 @@
                                     <action selector="animatorButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="lgf-xe-fam"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mig-v5-qJg">
+                                <rect key="frame" x="16" y="50" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mig-v5-qJg" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="Tqb-GI-MTl"/>
+                            <constraint firstItem="mig-v5-qJg" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="30" id="HQS-kB-GZe"/>
                             <constraint firstItem="mig-v5-qJg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="XNQ-IJ-E96"/>
                             <constraint firstItem="7if-wC-2HN" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ZJL-S2-Qn4"/>
-                            <constraint firstItem="7if-wC-2HN" firstAttribute="top" secondItem="mig-v5-qJg" secondAttribute="bottom" constant="78" id="g7A-sw-XJ0"/>
                             <constraint firstItem="mig-v5-qJg" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="wlN-qv-h1R"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7if-wC-2HN" secondAttribute="bottom" constant="30" id="zwN-eF-ePL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Single Line" image="first" id="acW-dT-cKf"/>
@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="-1127" y="1064"/>
         </scene>
         <!--Mutliple Line-->
         <scene sceneID="wg7-f3-ORb">
@@ -72,18 +72,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHf-Yh-HPV">
-                                <rect key="frame" x="16" y="313" width="343" height="41"/>
+                                <rect key="frame" x="16" y="50" width="343" height="183"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="In this example, we will see how the ghost can write text over multiple lines!">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed. Ut scelerisque faucibus sagittis. Morbi feugiat nulla ut efficitur facilisis. Aliquam id enim quis sem ullamcorper luctus. In vel diam congue, facilisis diam auctor, feugiat magna. Mauris sed ultricies mauris. Etiam in vestibulum mi, vitae dictum odio.</string>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG3-aE-F5X">
-                                <rect key="frame" x="141" y="432" width="92" height="44"/>
+                                <rect key="frame" x="141" y="544" width="92" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Fn5-K3-Mqn"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="XD4-5E-Pt3"/>
@@ -101,9 +103,9 @@
                         <constraints>
                             <constraint firstItem="FG3-aE-F5X" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="DfQ-RP-9FP"/>
                             <constraint firstItem="wHf-Yh-HPV" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ILP-YX-Vzi"/>
-                            <constraint firstItem="wHf-Yh-HPV" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="Uqy-W7-3xK"/>
                             <constraint firstItem="wHf-Yh-HPV" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="VeK-qZ-iFQ"/>
-                            <constraint firstItem="FG3-aE-F5X" firstAttribute="top" secondItem="wHf-Yh-HPV" secondAttribute="bottom" constant="78" id="oeG-jm-lPd"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="FG3-aE-F5X" secondAttribute="bottom" constant="30" id="nDy-FJ-osn"/>
+                            <constraint firstItem="wHf-Yh-HPV" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="30" id="uck-3H-1Se"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mutliple Line" image="second" id="cPa-gy-q4n"/>
@@ -113,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="-494" y="1064"/>
         </scene>
         <!--Chaining-->
         <scene sceneID="FAd-J4-4N7">
@@ -127,26 +129,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First label that will be ghosted in" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWI-5X-0Vg">
-                                <rect key="frame" x="16" y="252" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWI-5X-0Vg">
+                                <rect key="frame" x="16" y="50" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lorem ipsum dolor sit amet">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the second label that will be ghosted in and should only be animated once all of the first label is shown" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-lz-oul">
-                                <rect key="frame" x="16" y="300" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-lz-oul">
+                                <rect key="frame" x="16" y="98" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed. Ut scelerisque faucibus sagittis. Morbi feugiat nulla ut efficitur facilisis. Aliquam id enim quis sem ullamcorper luctus. In vel diam congue, facilisis diam auctor, feugiat magna. Mauris sed ultricies mauris. Etiam in vestibulum mi, vitae dictum odio.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-IN-1ic">
-                                <rect key="frame" x="16" y="347" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-IN-1ic">
+                                <rect key="frame" x="16" y="145" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed.">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5I-zx-ptK">
-                                <rect key="frame" x="141" y="446" width="92" height="44"/>
+                                <rect key="frame" x="141" y="544" width="92" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="H38-5I-D6f"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="OKN-r4-Faf"/>
@@ -168,9 +188,9 @@
                             <constraint firstItem="h3S-lz-oul" firstAttribute="trailing" secondItem="hAK-eZ-qYS" secondAttribute="trailingMargin" id="EIe-Vf-lwO"/>
                             <constraint firstItem="qWI-5X-0Vg" firstAttribute="trailing" secondItem="hAK-eZ-qYS" secondAttribute="trailingMargin" id="K5U-Kn-MPd"/>
                             <constraint firstItem="vQF-IN-1ic" firstAttribute="trailing" secondItem="hAK-eZ-qYS" secondAttribute="trailingMargin" id="KTV-cT-5eM"/>
-                            <constraint firstItem="F5I-zx-ptK" firstAttribute="top" secondItem="vQF-IN-1ic" secondAttribute="bottom" constant="78" id="ObJ-Xu-hL9"/>
+                            <constraint firstItem="FlU-OJ-MCc" firstAttribute="top" secondItem="F5I-zx-ptK" secondAttribute="bottom" constant="30" id="MCC-LN-QOx"/>
                             <constraint firstItem="h3S-lz-oul" firstAttribute="leading" secondItem="hAK-eZ-qYS" secondAttribute="leadingMargin" id="TlX-5y-VsS"/>
-                            <constraint firstItem="qWI-5X-0Vg" firstAttribute="top" secondItem="5Ph-5i-i6g" secondAttribute="bottom" constant="232" id="aL9-m7-GbF"/>
+                            <constraint firstItem="qWI-5X-0Vg" firstAttribute="top" secondItem="5Ph-5i-i6g" secondAttribute="bottom" constant="30" id="aL9-m7-GbF"/>
                             <constraint firstItem="vQF-IN-1ic" firstAttribute="leading" secondItem="hAK-eZ-qYS" secondAttribute="leadingMargin" id="bLJ-PU-jhH"/>
                             <constraint firstItem="F5I-zx-ptK" firstAttribute="centerX" secondItem="hAK-eZ-qYS" secondAttribute="centerX" id="yGM-Fz-8tz"/>
                         </constraints>
@@ -184,7 +204,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agr-kC-rBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1064"/>
+            <point key="canvasLocation" x="164" y="1064"/>
+        </scene>
+        <!--Recursively-->
+        <scene sceneID="G07-rQ-MSc">
+            <objects>
+                <viewController id="Nth-cD-0m4" customClass="RecursivelyChainingAnimationsViewController" customModule="GhostTyping_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hS9-Br-Sb0"/>
+                        <viewControllerLayoutGuide type="bottom" id="vXi-xI-4fc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i6i-Ve-qaB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-nu-Ngu">
+                                <rect key="frame" x="16" y="50" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lorem ipsum dolor sit amet">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-Ya-Rnv">
+                                <rect key="frame" x="16" y="98" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed. Ut scelerisque faucibus sagittis. Morbi feugiat nulla ut efficitur facilisis. Aliquam id enim quis sem ullamcorper luctus. In vel diam congue, facilisis diam auctor, feugiat magna. Mauris sed ultricies mauris. Etiam in vestibulum mi, vitae dictum odio.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-86-ltv">
+                                <rect key="frame" x="16" y="145" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed.">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Te-53-d3w">
+                                <rect key="frame" x="141" y="544" width="92" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="1aU-Lu-Q47"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="4qR-Jh-5km"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="dgw-vD-jh3"/>
+                                    <constraint firstAttribute="height" constant="44" id="zw3-6r-Nd9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Animate"/>
+                                <connections>
+                                    <action selector="animatorButtonPressed:" destination="Nth-cD-0m4" eventType="touchUpInside" id="hAy-aj-WbQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cfV-nu-Ngu" firstAttribute="leading" secondItem="i6i-Ve-qaB" secondAttribute="leadingMargin" id="3bV-8r-9rs"/>
+                            <constraint firstItem="7Te-53-d3w" firstAttribute="centerX" secondItem="i6i-Ve-qaB" secondAttribute="centerX" id="Ig4-jz-cnE"/>
+                            <constraint firstItem="p7o-86-ltv" firstAttribute="top" secondItem="aAy-Ya-Rnv" secondAttribute="bottom" constant="26" id="N3S-Zt-eqZ"/>
+                            <constraint firstItem="aAy-Ya-Rnv" firstAttribute="leading" secondItem="i6i-Ve-qaB" secondAttribute="leadingMargin" id="PrQ-3t-qSY"/>
+                            <constraint firstItem="p7o-86-ltv" firstAttribute="trailing" secondItem="i6i-Ve-qaB" secondAttribute="trailingMargin" id="QiQ-NS-guc"/>
+                            <constraint firstItem="p7o-86-ltv" firstAttribute="leading" secondItem="i6i-Ve-qaB" secondAttribute="leadingMargin" id="TgO-9e-sYF"/>
+                            <constraint firstItem="cfV-nu-Ngu" firstAttribute="trailing" secondItem="i6i-Ve-qaB" secondAttribute="trailingMargin" id="XDh-7d-pxf"/>
+                            <constraint firstItem="aAy-Ya-Rnv" firstAttribute="top" secondItem="cfV-nu-Ngu" secondAttribute="bottom" constant="27" id="bZK-qD-cVw"/>
+                            <constraint firstItem="cfV-nu-Ngu" firstAttribute="top" secondItem="hS9-Br-Sb0" secondAttribute="bottom" constant="30" id="l1x-4W-s3a"/>
+                            <constraint firstItem="aAy-Ya-Rnv" firstAttribute="trailing" secondItem="i6i-Ve-qaB" secondAttribute="trailingMargin" id="lb8-z7-gkh"/>
+                            <constraint firstItem="vXi-xI-4fc" firstAttribute="top" secondItem="7Te-53-d3w" secondAttribute="bottom" constant="30" id="ofZ-bP-Nrk"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Recursively" image="second" id="ogF-5r-JIe"/>
+                    <connections>
+                        <outlet property="firstTypingLabel" destination="cfV-nu-Ngu" id="Wdj-ka-ycB"/>
+                        <outlet property="secondTypingLabel" destination="aAy-Ya-Rnv" id="NHb-m7-Yww"/>
+                        <outlet property="thirdTypingLabel" destination="p7o-86-ltv" id="JhD-PJ-emX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPf-kv-1Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823" y="1064"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -200,6 +310,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="og1-pI-KqE" kind="relationship" relationship="viewControllers" id="HXq-Ui-MOo"/>
+                        <segue destination="Nth-cD-0m4" kind="relationship" relationship="viewControllers" id="tKC-kY-EGR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
