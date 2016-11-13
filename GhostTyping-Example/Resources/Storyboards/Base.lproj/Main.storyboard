@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91937282394031583" green="0.91937282394031583" blue="0.91937282394031583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mig-v5-qJg" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="30" id="HQS-kB-GZe"/>
                             <constraint firstItem="mig-v5-qJg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="XNQ-IJ-E96"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91754716634750366" green="0.91770458221435547" blue="0.91753727197647095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FG3-aE-F5X" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="DfQ-RP-9FP"/>
                             <constraint firstItem="wHf-Yh-HPV" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ILP-YX-Vzi"/>
@@ -180,7 +180,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91754716634750366" green="0.91770458221435547" blue="0.91753727197647095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qWI-5X-0Vg" firstAttribute="leading" secondItem="hAK-eZ-qYS" secondAttribute="leadingMargin" id="0Jm-gM-epc"/>
                             <constraint firstItem="h3S-lz-oul" firstAttribute="top" secondItem="qWI-5X-0Vg" secondAttribute="bottom" constant="27" id="3IQ-x6-h6V"/>
@@ -270,7 +270,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91937282389999997" green="0.91937282389999997" blue="0.91937282389999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cfV-nu-Ngu" firstAttribute="leading" secondItem="i6i-Ve-qaB" secondAttribute="leadingMargin" id="3bV-8r-9rs"/>
                             <constraint firstItem="7Te-53-d3w" firstAttribute="centerX" secondItem="i6i-Ve-qaB" secondAttribute="centerX" id="Ig4-jz-cnE"/>
