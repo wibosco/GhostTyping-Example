@@ -35,8 +35,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mig-v5-qJg">
-                                <rect key="frame" x="16" y="50" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="50" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -72,12 +72,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHf-Yh-HPV">
-                                <rect key="frame" x="16" y="50" width="343" height="183"/>
+                                <rect key="frame" x="16" y="50" width="343" height="178.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed. Ut scelerisque faucibus sagittis. Morbi feugiat nulla ut efficitur facilisis. Aliquam id enim quis sem ullamcorper luctus. In vel diam congue, facilisis diam auctor, feugiat magna. Mauris sed ultricies mauris. Etiam in vestibulum mi, vitae dictum odio.</string>
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -130,11 +130,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWI-5X-0Vg">
-                                <rect key="frame" x="16" y="50" width="343" height="21"/>
+                                <rect key="frame" x="16" y="50" width="343" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Lorem ipsum dolor sit amet">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -142,23 +142,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3S-lz-oul">
-                                <rect key="frame" x="16" y="98" width="343" height="21"/>
+                                <rect key="frame" x="16" y="106" width="343" height="178.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed. Ut scelerisque faucibus sagittis. Morbi feugiat nulla ut efficitur facilisis. Aliquam id enim quis sem ullamcorper luctus. In vel diam congue, facilisis diam auctor, feugiat magna. Mauris sed ultricies mauris. Etiam in vestibulum mi, vitae dictum odio.</string>
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-IN-1ic">
-                                <rect key="frame" x="16" y="145" width="343" height="21"/>
+                                <rect key="frame" x="16" y="310.5" width="343" height="59.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed.">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -219,11 +219,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-nu-Ngu">
-                                <rect key="frame" x="16" y="50" width="343" height="21"/>
+                                <rect key="frame" x="16" y="50" width="343" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Lorem ipsum dolor sit amet">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -231,12 +231,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-Ya-Rnv">
-                                <rect key="frame" x="16" y="98" width="343" height="21"/>
+                                <rect key="frame" x="16" y="106" width="343" height="178.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed. Ut scelerisque faucibus sagittis. Morbi feugiat nulla ut efficitur facilisis. Aliquam id enim quis sem ullamcorper luctus. In vel diam congue, facilisis diam auctor, feugiat magna. Mauris sed ultricies mauris. Etiam in vestibulum mi, vitae dictum odio.</string>
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -244,11 +244,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-86-ltv">
-                                <rect key="frame" x="16" y="145" width="343" height="21"/>
+                                <rect key="frame" x="16" y="310.5" width="343" height="59.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies fermentum nulla, at fermentum dui vehicula sed.">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
