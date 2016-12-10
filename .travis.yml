@@ -1,0 +1,6 @@
+language: objective-c
+
+osx_image: xcode8
+
+script:
+   xcodebuild -project GhostTyping-Example.xcodeproj -scheme GhostTyping-Example test -destination 'platform=iOS Simulator,name=iPhone 6'
