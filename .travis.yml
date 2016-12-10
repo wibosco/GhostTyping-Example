@@ -3,4 +3,4 @@ language: objective-c
 osx_image: xcode8.2
 
 script:
-   travis_retry xcodebuild test -scheme GhostTyping-Example -sdk iphonesimulator -destination "name=iPhone SE"
+   travis_retry xcodebuild test -scheme GhostTyping-Example -sdk iphonesimulator -destination "platform=iOS Simulator,OS=10.1,name=iPhone SE"
