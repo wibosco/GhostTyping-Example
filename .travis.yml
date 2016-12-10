@@ -3,4 +3,4 @@ language: objective-c
 osx_image: xcode8
 
 script:
-   xcodebuild test -scheme GhostTyping-Example -sdk iphonesimulator -destination "name=iPhone SE"
+   xcodebuild test -scheme GhostTyping-Example -sdk iphonesimulator -destination "name=iPhone SE" | xcpretty
