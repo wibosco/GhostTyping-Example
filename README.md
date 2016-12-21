@@ -6,4 +6,4 @@ An example project to show how we can implement a character-by-character animati
 
 ---
 
-I decided to expand this example project and turn it into a [pod (GhostTypewriter)](https://cocoapods.org/pods/GhostTypewriter) so that it could be more easily reused.
+I decided to expand this example project and turn it into a [pod (GhostTypewriter)](https://cocoapods.org/pods/GhostTypewriter) so that it could be more easily reused. If you have never used [Cocoapods](https://cocoapods.org/), its a dependency management tool that allows you to inject third party frameworks/libraries into your project - you should check it out.  
