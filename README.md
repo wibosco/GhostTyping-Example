@@ -6,4 +6,4 @@ An example project to show how we can implement a character-by-character animati
 
 ---
 
-I decided to expand this example and turn it into a pod (GhostTypewriter) so that it could be more easily reused.
+I decided to expand this example project and turn it into a [pod (GhostTypewriter)](https://cocoapods.org/pods/GhostTypewriter) so that it could be more easily reused.
