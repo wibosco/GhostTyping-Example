@@ -57,7 +57,7 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
     }
     
     private func animateTyping(label: UILabel?,
-                       completion: (()->Void)?) {
+                               completion: (()->Void)?) {
         var showCharactersUntilIndex = 1
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
@@ -90,8 +90,8 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
     }
     
     private func configureLabel(label: UILabel,
-                        alpha: CGFloat,
-                        until: Int?) {
+                                alpha: CGFloat,
+                                until: Int?) {
         if let attributedText = label.attributedText  {
             let attributedString = NSMutableAttributedString(attributedString: attributedText)
             attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
