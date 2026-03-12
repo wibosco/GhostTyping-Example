@@ -1,5 +1,5 @@
 //
-//  RecursivelyChainingAnimationsViewController.swift
+//  QueuingAnimationsViewController.swift
 //  GhostTyping-Example
 //
 //  Created by William Boles on 04/11/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecursivelyChainingAnimationsViewController: UIViewController {
+class QueuingAnimationsViewController: UIViewController {
     @IBOutlet weak var firstTypingLabel: UILabel!
     @IBOutlet weak var secondTypingLabel: UILabel!
     @IBOutlet weak var thirdTypingLabel: UILabel!
@@ -33,14 +33,15 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
     private func startTextAnimation() {
         animationTimer?.invalidate()
         
-        var typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel]
+        // 1
+        var typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel].compactMap { $0 }
         
+        // 2
         for typingAnimationLabel in typingAnimationLabelQueue {
-            configureLabel(label: typingAnimationLabel!,
-                           alpha: 0,
-                           until: typingAnimationLabel!.text?.count)
+            makeInvisible(label: typingAnimationLabel)
         }
         
+        // 3
         func doAnimation() {
             guard typingAnimationLabelQueue.count > 0 else {
                 return
@@ -57,21 +58,23 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
     }
     
     private func animateTyping(label: UILabel?,
-                               completion: (()->Void)?) {
-        var showCharactersUntilIndex = 1
+                               completion: (() -> Void)?) {
+        var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
                                               repeats: true,
-                                              block: { [weak self] (timer: Timer) in
+                                              block: { timer in
             if let label = label, let attributedText = label.attributedText {
                 let characters = Array(attributedText.string)
                 
-                if showCharactersUntilIndex <= characters.count {
-                    self?.configureLabel(label: label,
-                                         alpha: 1,
-                                         until: showCharactersUntilIndex)
+                if characterIndex < characters.count {
+                    let attributedString = NSMutableAttributedString(attributedString: attributedText)
+                    attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                                  value: label.textColor.withAlphaComponent(CGFloat(1)),
+                                                  range: NSMakeRange(characterIndex, 1))
+                    label.attributedText = attributedString
                     
-                    showCharactersUntilIndex += 1
+                    characterIndex += 1
                 } else {
                     timer.invalidate()
                     
@@ -89,15 +92,15 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
         })
     }
     
-    private func configureLabel(label: UILabel,
-                                alpha: CGFloat,
-                                until: Int?) {
-        if let attributedText = label.attributedText  {
-            let attributedString = NSMutableAttributedString(attributedString: attributedText)
-            attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                          value: label.textColor.withAlphaComponent(CGFloat(alpha)),
-                                          range: NSMakeRange(0, until ?? 0))
-            label.attributedText = attributedString
+    private func makeInvisible(label: UILabel) {
+        guard let attributedText = label.attributedText else {
+            return
         }
+        
+        let attributedString = NSMutableAttributedString(attributedString: attributedText)
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                      value: label.textColor.withAlphaComponent(CGFloat(0)),
+                                      range: NSMakeRange(0, attributedText.length))
+        label.attributedText = attributedString
     }
 }

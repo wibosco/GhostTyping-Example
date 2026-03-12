@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,7 +117,7 @@
         <!--Chaining-->
         <scene sceneID="FAd-J4-4N7">
             <objects>
-                <viewController id="og1-pI-KqE" customClass="IterativelyChainingAnimationsViewController" customModule="GhostTyping_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="og1-pI-KqE" customClass="ChainingAnimationsViewController" customModule="GhostTyping_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ph-5i-i6g"/>
                         <viewControllerLayoutGuide type="bottom" id="FlU-OJ-MCc"/>
@@ -202,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="164" y="1064"/>
         </scene>
-        <!--Recursively-->
+        <!--Queuing-->
         <scene sceneID="G07-rQ-MSc">
             <objects>
-                <viewController id="Nth-cD-0m4" customClass="RecursivelyChainingAnimationsViewController" customModule="GhostTyping_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nth-cD-0m4" customClass="QueuingAnimationsViewController" customModule="GhostTyping_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hS9-Br-Sb0"/>
                         <viewControllerLayoutGuide type="bottom" id="vXi-xI-4fc"/>
@@ -281,7 +282,7 @@
                             <constraint firstItem="vXi-xI-4fc" firstAttribute="top" secondItem="7Te-53-d3w" secondAttribute="bottom" constant="30" id="ofZ-bP-Nrk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recursively" image="second" id="ogF-5r-JIe"/>
+                    <tabBarItem key="tabBarItem" title="Queuing" image="second" id="ogF-5r-JIe"/>
                     <connections>
                         <outlet property="firstTypingLabel" destination="cfV-nu-Ngu" id="Wdj-ka-ycB"/>
                         <outlet property="secondTypingLabel" destination="aAy-Ya-Rnv" id="NHb-m7-Yww"/>
