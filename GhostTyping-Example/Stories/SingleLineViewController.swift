@@ -56,11 +56,7 @@ class SingleLineViewController: UIViewController {
             
             let nextCharacterToAdd = String(characters[characterIndex])
             
-            if let currentText = label.text {
-                label.text = currentText + nextCharacterToAdd
-            } else {
-                label.text = nextCharacterToAdd
-            }
+            label.text = (label.text ?? "") + nextCharacterToAdd
             
             characterIndex += 1
         }
