@@ -39,7 +39,7 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
         var typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel]
         
         for typingAnimationLabel in typingAnimationLabelQueue {
-            configureLabel(label: typingAnimationLabel!, alpha: 0, until: typingAnimationLabel!.text?.characters.count)
+            configureLabel(label: typingAnimationLabel!, alpha: 0, until: typingAnimationLabel!.text?.count)
         }
         
         func doAnimation() {
@@ -62,7 +62,7 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (timer: Timer) in
             if let label = label, let attributedText = label.attributedText {
-                let characters = Array(attributedText.string.characters)
+                let characters = Array(attributedText.string)
                 
                 if showCharactersUntilIndex <= characters.count {
                     self?.configureLabel(label: label, alpha: 1, until: showCharactersUntilIndex)
@@ -88,7 +88,7 @@ class RecursivelyChainingAnimationsViewController: UIViewController {
     func configureLabel(label: UILabel, alpha: CGFloat, until: Int?) {
         if let attributedText = label.attributedText  {
             let attributedString = NSMutableAttributedString(attributedString: attributedText)
-            attributedString.addAttribute(NSForegroundColorAttributeName, value: label.textColor.withAlphaComponent(CGFloat(alpha)), range: NSMakeRange(0, until ?? 0))
+            attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: label.textColor.withAlphaComponent(CGFloat(alpha)), range: NSMakeRange(0, until ?? 0))
             label.attributedText = attributedString
         }
     }

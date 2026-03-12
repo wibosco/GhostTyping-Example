@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/wibosco/GhostTyping-Example.svg)](https://travis-ci.org/wibosco/GhostTyping-Example)
-<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" 
-/></a>
-<a href="https://twitter.com/wibosco"><img src="https://img.shields.io/badge/twitter-@wibosco-blue.svg?style=flat" alt="Twitter: @wibosco" /></a>
+[![Build](https://github.com/wibosco/GhostTyping-Example/actions/workflows/swift.yml/badge.svg)](https://github.com/wibosco/GhostTyping-Example/actions/workflows/swift.yml)
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat" alt="Swift" /></a>
+[![License](http://img.shields.io/badge/License-MIT-green.svg?style=flat)](https://github.com/wibosco/GhostTyping-Example/blob/main/LICENSE)
 
 # GhostTyping-Example
 

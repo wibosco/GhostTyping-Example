@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChainingAnimationsViewController: UIViewController {
+class IterativelyChainingAnimationsViewController: UIViewController {
 
     // MARK: - Properties
     
@@ -35,9 +35,9 @@ class ChainingAnimationsViewController: UIViewController {
     
     func startTextAnimation() {
         animationTimer?.invalidate()
-        configureLabel(label: firstTypingLabel, alpha: 0, until: firstTypingLabel.text?.characters.count)
-        configureLabel(label: secondTypingLabel, alpha: 0, until: secondTypingLabel.text?.characters.count)
-        configureLabel(label: thirdTypingLabel, alpha: 0, until: thirdTypingLabel.text?.characters.count)
+        configureLabel(label: firstTypingLabel, alpha: 0, until: firstTypingLabel.text?.count)
+        configureLabel(label: secondTypingLabel, alpha: 0, until: secondTypingLabel.text?.count)
+        configureLabel(label: thirdTypingLabel, alpha: 0, until: thirdTypingLabel.text?.count)
         
         animateText(label: firstTypingLabel, completion: { [weak self] in
             self?.animateText(label: self?.secondTypingLabel, completion: {
@@ -51,7 +51,7 @@ class ChainingAnimationsViewController: UIViewController {
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (timer: Timer) in
             if let label = label, let attributedText = label.attributedText {
-                let characters = Array(attributedText.string.characters)
+                let characters = Array(attributedText.string)
                 
                 if showCharactersUntilIndex <= characters.count {
                     self?.configureLabel(label: label, alpha: 1, until: showCharactersUntilIndex)
@@ -77,7 +77,7 @@ class ChainingAnimationsViewController: UIViewController {
     func configureLabel(label: UILabel, alpha: CGFloat, until: Int?) {
         if let attributedText = label.attributedText  {
             let attributedString = NSMutableAttributedString(attributedString: attributedText)
-            attributedString.addAttribute(NSForegroundColorAttributeName, value: label.textColor.withAlphaComponent(CGFloat(alpha)), range: NSMakeRange(0, until ?? 0))
+            attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: label.textColor.withAlphaComponent(CGFloat(alpha)), range: NSMakeRange(0, until ?? 0))
             label.attributedText = attributedString
         }
     }

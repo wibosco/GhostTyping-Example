@@ -46,7 +46,7 @@ class SingleLineViewController: UIViewController {
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (timer: Timer) in
             if let fullTextToBeWritten = self?.fullTextToBeWritten, let label = self?.typingLabel {
-                let characters = Array(fullTextToBeWritten.characters)
+                let characters = Array(fullTextToBeWritten)
                 
                 if nextCharacterIndexToBeShown < characters.count {
                     let nextCharacterToAdd = String(characters[nextCharacterIndexToBeShown])
