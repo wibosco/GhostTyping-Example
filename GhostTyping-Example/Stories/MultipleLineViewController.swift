@@ -35,33 +35,30 @@ class MultipleLineViewController: UIViewController {
         
         animationTimer?.invalidate()
         
-        let attributedString = NSMutableAttributedString(attributedString: attributedText)
-        attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                      value: typingLabel.textColor.withAlphaComponent(0),
-                                      range: NSMakeRange(0, attributedText.length))
-        typingLabel.attributedText = attributedString
+        let mutableAttributedString = NSMutableAttributedString(attributedString: attributedText)
         
+        mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                             value: typingLabel.textColor.withAlphaComponent(0),
+                                             range: NSMakeRange(0, attributedText.length))
+        typingLabel.attributedText = mutableAttributedString
+        
+        let characters = Array(attributedText.string)
         var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
                                               repeats: true) { [weak self] (timer: Timer) in
-            if let label = self?.typingLabel, let attributedText = label.attributedText {
-                let characters = Array(attributedText.string)
-                
-                if characterIndex < characters.count {
-                    let attributedString = NSMutableAttributedString(attributedString: attributedText)
-                    attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                                  value: label.textColor.withAlphaComponent(1),
-                                                  range: NSMakeRange(characterIndex, 1))
-                    label.attributedText = attributedString
-                    
-                    characterIndex += 1
-                } else {
-                    timer.invalidate()
-                }
-            } else {
+            guard let label = self?.typingLabel, characterIndex < characters.count else {
                 timer.invalidate()
+                
+                return
             }
+                
+            mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                                 value: label.textColor.withAlphaComponent(1),
+                                                 range: NSMakeRange(characterIndex, 1))
+            label.attributedText = mutableAttributedString
+            
+            characterIndex += 1
         }
     }
 }

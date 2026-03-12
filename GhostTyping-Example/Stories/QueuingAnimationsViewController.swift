@@ -59,31 +59,32 @@ class QueuingAnimationsViewController: UIViewController {
     
     private func animateTyping(label: UILabel?,
                                completion: (() -> Void)?) {
+        guard let label = label, let attributedText = label.attributedText else {
+            completion?()
+            
+            return
+        }
+        
+        let mutableAttributedString = NSMutableAttributedString(attributedString: attributedText)
+        
+        let characters = Array(attributedText.string)
         var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
                                               repeats: true) { timer in
-            if let label = label, let attributedText = label.attributedText {
-                let characters = Array(attributedText.string)
-                
-                if characterIndex < characters.count {
-                    let attributedString = NSMutableAttributedString(attributedString: attributedText)
-                    attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                                  value: label.textColor.withAlphaComponent(1),
-                                                  range: NSMakeRange(characterIndex, 1))
-                    label.attributedText = attributedString
-                    
-                    characterIndex += 1
-                } else {
-                    timer.invalidate()
-                    
-                    completion?()
-                }
-            } else {
+            guard characterIndex < characters.count else {
                 timer.invalidate()
-                
                 completion?()
+                
+                return
             }
+            
+            mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                                 value: label.textColor.withAlphaComponent(1),
+                                                 range: NSMakeRange(characterIndex, 1))
+            label.attributedText = mutableAttributedString
+            
+            characterIndex += 1
         }
     }
     

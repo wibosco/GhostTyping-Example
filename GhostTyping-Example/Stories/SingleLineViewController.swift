@@ -36,32 +36,33 @@ class SingleLineViewController: UIViewController {
     // MARK: - Animation
     
     private func animateTyping() {
+        guard let fullTextToBeWritten = self.fullTextToBeWritten else {
+            return
+        }
+        
         animationTimer?.invalidate()
         typingLabel.text = nil
         
+        let characters = Array(fullTextToBeWritten)
         var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
                                               repeats: true) { [weak self] (timer: Timer) in
-            if let fullTextToBeWritten = self?.fullTextToBeWritten, let label = self?.typingLabel {
-                let characters = Array(fullTextToBeWritten)
-                
-                if characterIndex < characters.count {
-                    let nextCharacterToAdd = String(characters[characterIndex])
-                    
-                    if let currentText = label.text {
-                        label.text = currentText + nextCharacterToAdd
-                    } else {
-                        label.text = nextCharacterToAdd
-                    }
-                    
-                    characterIndex += 1
-                } else {
-                    timer.invalidate()
-                }
-            } else {
+            guard let label = self?.typingLabel, characterIndex < characters.count else {
                 timer.invalidate()
+                
+                return
             }
+            
+            let nextCharacterToAdd = String(characters[characterIndex])
+            
+            if let currentText = label.text {
+                label.text = currentText + nextCharacterToAdd
+            } else {
+                label.text = nextCharacterToAdd
+            }
+            
+            characterIndex += 1
         }
     }
 }
