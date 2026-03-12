@@ -28,12 +28,21 @@ class MultipleLineViewController: UIViewController {
     
     // MARK: - Animation
     
+    // 1
     private func animateText() {
-        animationTimer?.invalidate()
-        configureLabel(alpha: 0,
-                       until: typingLabel.text?.count)
+        guard let attributedText = typingLabel.attributedText else {
+            return
+        }
         
-        var showCharactersUntilIndex = 1
+        animationTimer?.invalidate()
+        
+        let attributedString = NSMutableAttributedString(attributedString: attributedText)
+        attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                      value: typingLabel.textColor.withAlphaComponent(CGFloat(0)),
+                                      range: NSMakeRange(0, attributedText.length))
+        typingLabel.attributedText = attributedString
+        
+        var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
                                               repeats: true,
@@ -41,11 +50,14 @@ class MultipleLineViewController: UIViewController {
             if let label = self?.typingLabel, let attributedText = label.attributedText {
                 let characters = Array(attributedText.string)
                 
-                if showCharactersUntilIndex <= characters.count {
-                    self?.configureLabel(alpha: 1,
-                                         until: showCharactersUntilIndex)
+                if characterIndex < characters.count {
+                    let attributedString = NSMutableAttributedString(attributedString: attributedText)
+                    attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
+                                                  value: label.textColor.withAlphaComponent(CGFloat(1)),
+                                                  range: NSMakeRange(characterIndex, 1))
+                    label.attributedText = attributedString
                     
-                    showCharactersUntilIndex += 1
+                    characterIndex += 1
                 } else {
                     timer.invalidate()
                 }
@@ -54,16 +66,4 @@ class MultipleLineViewController: UIViewController {
             }
         })
     }
-    
-    private func configureLabel(alpha: CGFloat,
-                        until: Int?) {
-        if let attributedText = typingLabel.attributedText  {
-            let attributedString = NSMutableAttributedString(attributedString: attributedText)
-            attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                          value: typingLabel.textColor.withAlphaComponent(CGFloat(alpha)),
-                                          range: NSMakeRange(0, until ?? 0))
-            typingLabel.attributedText = attributedString
-        }
-    }
 }
-
