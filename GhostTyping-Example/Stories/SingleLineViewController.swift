@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SingleLineViewController.swift
 //  GhostTyping-Example
 //
 //  Created by William Boles on 30/10/2016.
@@ -9,9 +9,6 @@
 import UIKit
 
 class SingleLineViewController: UIViewController {
-
-    // MARK: - Properties
-    
     @IBOutlet weak var typingLabel: UILabel!
     
     var animationTimer: Timer?
@@ -38,13 +35,15 @@ class SingleLineViewController: UIViewController {
     
     // MARK: - Animation
     
-    func animateText() {
+    private func animateText() {
         animationTimer?.invalidate()
         typingLabel.text = nil
         
         var nextCharacterIndexToBeShown = 0
         
-        animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (timer: Timer) in
+        animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
+                                              repeats: true,
+                                              block: { [weak self] (timer: Timer) in
             if let fullTextToBeWritten = self?.fullTextToBeWritten, let label = self?.typingLabel {
                 let characters = Array(fullTextToBeWritten)
                 
@@ -67,4 +66,3 @@ class SingleLineViewController: UIViewController {
         })
     }
 }
-
