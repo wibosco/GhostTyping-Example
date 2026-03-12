@@ -39,15 +39,15 @@ class SingleLineViewController: UIViewController {
         animationTimer?.invalidate()
         typingLabel.text = nil
         
-        var nextCharacterIndexToBeShown = 0
+        var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
                                               repeats: true) { [weak self] (timer: Timer) in
             if let fullTextToBeWritten = self?.fullTextToBeWritten, let label = self?.typingLabel {
                 let characters = Array(fullTextToBeWritten)
                 
-                if nextCharacterIndexToBeShown < characters.count {
-                    let nextCharacterToAdd = String(characters[nextCharacterIndexToBeShown])
+                if characterIndex < characters.count {
+                    let nextCharacterToAdd = String(characters[characterIndex])
                     
                     if let currentText = label.text {
                         label.text = currentText + nextCharacterToAdd
@@ -55,7 +55,7 @@ class SingleLineViewController: UIViewController {
                         label.text = nextCharacterToAdd
                     }
                     
-                    nextCharacterIndexToBeShown += 1
+                    characterIndex += 1
                 } else {
                     timer.invalidate()
                 }
