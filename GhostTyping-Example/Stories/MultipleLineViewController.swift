@@ -37,22 +37,21 @@ class MultipleLineViewController: UIViewController {
         
         let attributedString = NSMutableAttributedString(attributedString: attributedText)
         attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                      value: typingLabel.textColor.withAlphaComponent(CGFloat(0)),
+                                      value: typingLabel.textColor.withAlphaComponent(0),
                                       range: NSMakeRange(0, attributedText.length))
         typingLabel.attributedText = attributedString
         
         var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
-                                              repeats: true,
-                                              block: { [weak self] (timer: Timer) in
+                                              repeats: true) { [weak self] (timer: Timer) in
             if let label = self?.typingLabel, let attributedText = label.attributedText {
                 let characters = Array(attributedText.string)
                 
                 if characterIndex < characters.count {
                     let attributedString = NSMutableAttributedString(attributedString: attributedText)
                     attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                                  value: label.textColor.withAlphaComponent(CGFloat(1)),
+                                                  value: label.textColor.withAlphaComponent(1),
                                                   range: NSMakeRange(characterIndex, 1))
                     label.attributedText = attributedString
                     
@@ -63,6 +62,6 @@ class MultipleLineViewController: UIViewController {
             } else {
                 timer.invalidate()
             }
-        })
+        }
     }
 }

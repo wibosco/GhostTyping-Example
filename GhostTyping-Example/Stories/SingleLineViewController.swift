@@ -42,8 +42,7 @@ class SingleLineViewController: UIViewController {
         var nextCharacterIndexToBeShown = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
-                                              repeats: true,
-                                              block: { [weak self] (timer: Timer) in
+                                              repeats: true) { [weak self] (timer: Timer) in
             if let fullTextToBeWritten = self?.fullTextToBeWritten, let label = self?.typingLabel {
                 let characters = Array(fullTextToBeWritten)
                 
@@ -63,6 +62,6 @@ class SingleLineViewController: UIViewController {
             } else {
                 timer.invalidate()
             }
-        })
+        }
     }
 }

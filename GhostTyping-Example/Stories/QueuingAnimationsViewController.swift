@@ -62,15 +62,14 @@ class QueuingAnimationsViewController: UIViewController {
         var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
-                                              repeats: true,
-                                              block: { timer in
+                                              repeats: true) { timer in
             if let label = label, let attributedText = label.attributedText {
                 let characters = Array(attributedText.string)
                 
                 if characterIndex < characters.count {
                     let attributedString = NSMutableAttributedString(attributedString: attributedText)
                     attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                                  value: label.textColor.withAlphaComponent(CGFloat(1)),
+                                                  value: label.textColor.withAlphaComponent(1),
                                                   range: NSMakeRange(characterIndex, 1))
                     label.attributedText = attributedString
                     
@@ -78,18 +77,14 @@ class QueuingAnimationsViewController: UIViewController {
                 } else {
                     timer.invalidate()
                     
-                    if let completion = completion {
-                        completion()
-                    }
+                    completion?()
                 }
             } else {
                 timer.invalidate()
                 
-                if let completion = completion {
-                    completion()
-                }
+                completion?()
             }
-        })
+        }
     }
     
     private func makeInvisible(label: UILabel) {
@@ -99,7 +94,7 @@ class QueuingAnimationsViewController: UIViewController {
         
         let attributedString = NSMutableAttributedString(attributedString: attributedText)
         attributedString.addAttribute(NSAttributedStringKey.foregroundColor,
-                                      value: label.textColor.withAlphaComponent(CGFloat(0)),
+                                      value: label.textColor.withAlphaComponent(0),
                                       range: NSMakeRange(0, attributedText.length))
         label.attributedText = attributedString
     }
