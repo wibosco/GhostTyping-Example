@@ -25,12 +25,12 @@ class QueuingAnimationsViewController: UIViewController {
     // MARK: - ButtonActions
     
     @IBAction func animatorButtonPressed(_ sender: Any) {
-        startTextAnimation()
+        startTypingAnimation()
     }
     
     // MARK: - Animation
     
-    private func startTextAnimation() {
+    private func startTypingAnimation() {
         animationTimer?.invalidate()
         
         let typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel].compactMap { $0 }
@@ -45,7 +45,7 @@ class QueuingAnimationsViewController: UIViewController {
             guard labelIndex < typingAnimationLabelQueue.count else {
                 return
             }
-
+            
             let typingAnimationLabel = typingAnimationLabelQueue[labelIndex]
             labelIndex += 1
             

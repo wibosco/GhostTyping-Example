@@ -23,12 +23,12 @@ class MultipleLineViewController: UIViewController {
     // MARK: - ButtonActions
     
     @IBAction func animatorButtonPressed(_ sender: Any) {
-        animateText()
+        animateTyping()
     }
     
     // MARK: - Animation
     
-    private func animateText() {
+    private func animateTyping() {
         guard let attributedText = typingLabel.attributedText else {
             return
         }

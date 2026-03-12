@@ -30,12 +30,12 @@ class SingleLineViewController: UIViewController {
     // MARK: - ButtonActions
     
     @IBAction func animatorButtonPressed(_ sender: Any) {
-        animateText()
+        animateTyping()
     }
     
     // MARK: - Animation
     
-    private func animateText() {
+    private func animateTyping() {
         animationTimer?.invalidate()
         typingLabel.text = nil
         

@@ -25,30 +25,30 @@ class ChainingAnimationsViewController: UIViewController {
     // MARK: - ButtonActions
     
     @IBAction func animatorButtonPressed(_ sender: Any) {
-        startTextAnimation()
+        startTypingAnimation()
     }
     
     // MARK: - Animation
     
-    private func startTextAnimation() {
+    private func startTypingAnimation() {
         animationTimer?.invalidate()
         
         makeInvisible(label: firstTypingLabel)
         makeInvisible(label: secondTypingLabel)
         makeInvisible(label: thirdTypingLabel)
         
-        animateText(label: firstTypingLabel,
-                    completion: { [weak self] in
-            self?.animateText(label: self?.secondTypingLabel,
-                              completion: {
-                self?.animateText(label: self?.thirdTypingLabel,
-                                  completion: nil)
+        animateTyping(label: firstTypingLabel,
+                      completion: { [weak self] in
+            self?.animateTyping(label: self?.secondTypingLabel,
+                                completion: {
+                self?.animateTyping(label: self?.thirdTypingLabel,
+                                    completion: nil)
             })
         })
     }
     
-    private func animateText(label: UILabel?,
-                             completion: (() -> Void)?) {
+    private func animateTyping(label: UILabel?,
+                               completion: (() -> Void)?) {
         var characterIndex = 0
         
         animationTimer = Timer.scheduledTimer(withTimeInterval: 0.1,
