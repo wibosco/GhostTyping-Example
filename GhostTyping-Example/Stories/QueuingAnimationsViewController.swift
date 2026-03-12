@@ -33,21 +33,21 @@ class QueuingAnimationsViewController: UIViewController {
     private func startTextAnimation() {
         animationTimer?.invalidate()
         
-        // 1
-        var typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel].compactMap { $0 }
+        let typingAnimationLabelQueue = [firstTypingLabel, secondTypingLabel, thirdTypingLabel].compactMap { $0 }
         
-        // 2
         for typingAnimationLabel in typingAnimationLabelQueue {
             makeInvisible(label: typingAnimationLabel)
         }
         
-        // 3
+        var labelIndex = 0
+        
         func doAnimation() {
-            guard typingAnimationLabelQueue.count > 0 else {
+            guard labelIndex < typingAnimationLabelQueue.count else {
                 return
             }
-            
-            let typingAnimationLabel = typingAnimationLabelQueue.removeFirst()
+
+            let typingAnimationLabel = typingAnimationLabelQueue[labelIndex]
+            labelIndex += 1
             
             animateTyping(label: typingAnimationLabel) {
                 doAnimation()

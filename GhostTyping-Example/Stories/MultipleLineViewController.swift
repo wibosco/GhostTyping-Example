@@ -28,7 +28,6 @@ class MultipleLineViewController: UIViewController {
     
     // MARK: - Animation
     
-    // 1
     private func animateText() {
         guard let attributedText = typingLabel.attributedText else {
             return

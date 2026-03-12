@@ -47,7 +47,6 @@ class ChainingAnimationsViewController: UIViewController {
         })
     }
     
-    // 5
     private func animateText(label: UILabel?,
                              completion: (() -> Void)?) {
         var characterIndex = 0
@@ -69,7 +68,6 @@ class ChainingAnimationsViewController: UIViewController {
                 } else {
                     timer.invalidate()
                     
-                    // 6
                     if let completion = completion {
                         completion()
                     }
